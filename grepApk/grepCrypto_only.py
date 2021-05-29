@@ -234,10 +234,8 @@ for app in applist:
     if out != '':
         resdex_first = 1
         # only at this time, we do dex2jar
-        """
         if os.path.exists(appjar) == False:
             os.system('%s -f -o %s %s' % (dex2jar, appjar, app))
-        """
 
     # analyze parameters and conditions when resdex == 1
     """
