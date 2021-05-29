@@ -57,6 +57,23 @@ Scene.v().setSootClassPath("/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar");
 6. The associated Python scripts have been tested under Python 2.7 but not Python 3+.
 
 
+## A Running Example
+Once you compile BackDroid to generate .class files, you can run BackDroid like the example below:
+```
+// Test BackDroid using com.kugou.android.apk in the test folder
+BackDroid$ cd test/
+
+// Generate the _dexdump.log and _dex2jar.jar files using the "-w" option
+BackDroid/test$ python ../grepApk/grepPort_only.py -a . -w No
+
+// Run the main BackDroid code in the release mode ("3") and for open port detection
+BackDroid/test$ ../bin/rawdroid.sh com.kugou.android 3 OpenPort
+
+// Draw plot files for the generated BDG graphs
+BackDroid/test$ ../bin/dotTOpdf.sh .
+```
+
+
 ## Source Folders Explained
 
 ### BackDroid Related
@@ -106,17 +123,3 @@ removed
 
 ### AmanDroid Related
 1. amanDroid: for experiments and scripts
-
-
-## A Running Example
-Once you compile BackDroid to generate .class files, you can run BackDroid like the example below:
-```
-// Test BackDroid using com.kugou.android.apk in the test folder
-BackDroid$ cd test/
-// Generate the _dexdump.log and _dex2jar.jar files using the "-w" option
-BackDroid/test$ python ../grepApk/grepPort_only.py -a . -w No
-// Run the main BackDroid code in the release mode ("3") and for open port detection
-BackDroid/test$ ../bin/rawdroid.sh com.kugou.android 3 OpenPort
-// Draw plot files for the generated BDG graphs
-BackDroid/test$ ../bin/dotTOpdf.sh .
-```
