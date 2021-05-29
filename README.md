@@ -76,7 +76,7 @@ removed
 -- grepCrypto.py: for crypto API related sinks
 -- grepPort.py: for open port API related sinks
 -- XXX_only.py: only count whether an APK contains the target sinks or not
-   That is, this would not run BackDroid.
+   That is, "_only.py" means do not run BackDroid.
    A benefit of this script to to generate _dexdump.log and _dex2jar.jar.
    For example, backDroid/test$ python ../grepApk/grepPort_only.py -a . -w No         
    -a . for the current "test" folder; -w No for keeping dexdump.log and .jar
