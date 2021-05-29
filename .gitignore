@@ -1,0 +1,15 @@
+*.class
+*.swp
+*.dot
+*.log
+*.pdf
+*_apktool
+*_src
+*.pyc
+test
+dex2jarerr
+temptest
+cryptotest
+ssltest
+bountyApps
+NDSS15_EdgeMiner_dataset
