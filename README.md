@@ -54,6 +54,8 @@ public static String AndroSDK = "/home/dao/software/android-sdk-linux_x86/platfo
 Scene.v().setSootClassPath("/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar");
 ```
 
+6. The associated Python scripts have been tested under Python 2.7 but not Python 3+.
+
 
 ## Source Folders Explained
 
@@ -106,7 +108,7 @@ removed
 1. amanDroid: for experiments and scripts
 
 
-### A Running Example
+## A Running Example
 Once you compile BackDroid to generate .class files, you can run BackDroid like the example below:
 ```
 // Test BackDroid using com.kugou.android.apk in the test folder
