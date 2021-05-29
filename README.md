@@ -17,7 +17,7 @@ If you use BackDroid or its code, please cite our DSN'21 paper as follows:
 BackDroid was initially developed in a private BitBucket repo, and we are now migrating it to GitHub.
 We also include some binaries and scripts of Amandroid and FlowDroid for a quick comparison between them and BackDroid.
 
-We are cleaning the code of BackDroid and making it easy-to-use and extensible.
+We are **cleaning the code** of BackDroid to make it easy-to-use and extensible.
 The current version was mainly set for Daoyuan's computer and used some hard-code.
 
 Our ultimate goal is to **make BackDroid a *practical* and *full-stack* Android static analysis tool**, which can run as **a standalone tool** and also be used as **a generic SDK** to support customization for different problems.
@@ -53,3 +53,54 @@ public static String AndroSDK = "/home/dao/software/android-sdk-linux_x86/platfo
 ```
 Scene.v().setSootClassPath("/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar");
 ```
+
+
+## Source File Folders Explained
+
+### BackDroid Related
+1. BackDroid: the main source code
+```
+-- PortDetector is the main class
+-- DumpAPIClass directly dumps an app class using Soot for debug
+-- TestCallGraph is the old call graph generator using FlowDroid. Need to be
+removed
+-- analysis folder is the main analyzers
+-- graph and structure folders are for data structures
+-- util folder is some supporting class
+```
+
+2. grepApk: the script for automatically running BackDroid for experiments
+```
+-- grepCrypto.py: for crypto API related sinks
+-- grepPort.py: for open port API related sinks
+-- XXX_only.py: only count whether an APK contains the target sinks or not
+   That is, this would not run BackDroid.
+   A benefit of this script to to generate _dexdump.log and _dex2jar.jar.
+   For example, backDroid/test$ python ../grepPort/grepPort_only.py -a . -w No         
+   -a . for the current "test" folder; -w No for keeping dexdump.log and .jar
+```
+
+3. bin: the script for manually running BackDroid for debug
+```
+-- Require the generated _dexdump.log and _dex2jar.jar before we can run it.
+-- You can understand the usage and see the examples by "cat" it.
+   For example:
+   backDroid/test$ ../bin/rawdroid.sh com.kugou.android 3 OpenPort
+   backDroid/test$ ../bin/dotTOpdf.sh .
+```
+
+4. exp, log, lib, test are self-explained.
+
+### FlowDroid Related
+1. flowDroid: for experiments and scripts
+```
+-- gencallgraph.sh to run TestFlowDroid for automatic experiments.
+-- oldcallgraph.sh to run OldFlowDroid for manual testing.
+```
+
+2. TestDroid: Java code used by gencallgraph.sh
+
+3. OldFlowDroid: Java code used by oldcallgraph.sh
+
+### AmanDroid Related
+1. amanDroid: for experiments and scripts
