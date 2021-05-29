@@ -23,7 +23,7 @@ The current version was mainly set for Daoyuan's computer and used some hard-cod
 Our ultimate goal is to **make BackDroid a *practical* and *full-stack* Android static analysis tool**, which can run as **a standalone tool** and also be used as **a generic SDK** to support customization for different problems.
 
 
-## Required Tool/SDK to compile/run BackDroid
+## The Required Tool/SDK
 
 1. I use Eclipse to compile BackDroid, OldFlowDroid, and TestFlowDroid.<br>
 **TODO:** use Gradle to make environment-independent compilation.
@@ -55,7 +55,7 @@ Scene.v().setSootClassPath("/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar");
 ```
 
 
-## Source File Folders Explained
+## Source Folders Explained
 
 ### BackDroid Related
 1. BackDroid: the main source code
