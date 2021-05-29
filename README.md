@@ -89,7 +89,7 @@ removed
    backDroid/test$ ../bin/dotTOpdf.sh .
 ```
 
-4. exp, log, lib, test are self-explained.
+4. lib, test, exp, log are self-explained.
 
 ### FlowDroid Related
 1. flowDroid: for experiments and scripts
