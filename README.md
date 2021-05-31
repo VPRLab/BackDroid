@@ -76,7 +76,7 @@ removed
 -- grepCrypto.py: for crypto API related sinks
 -- grepPort.py: for open port API related sinks
 -- XXX_only.py: only count whether an APK contains the target sinks or not
-   That is, this would not run BackDroid.
+   That is, "_only.py" means do not run BackDroid.
    A benefit of this script to to generate _dexdump.log and _dex2jar.jar.
    For example, backDroid/test$ python ../grepApk/grepPort_only.py -a . -w No         
    -a . for the current "test" folder; -w No for keeping dexdump.log and .jar
@@ -109,7 +109,7 @@ removed
 
 
 ## A Running Example
-Once you compile BackDroid to generate .class files, you can run BackDroid like the example below:
+Once you compile BackDroid to generate .class files, you can manually run BackDroid like the example below:
 ```
 // Test BackDroid using two APKs in the test folder
 BackDroid$ cd test/
@@ -122,6 +122,7 @@ BackDroid/test$ python ../grepApk/grepPort_only.py -a . -w No   // For APKs with
 BackDroid/test$ ../bin/rawdroid.sh com.adobe.fas 3 CRYPTO
 BackDroid/test$ ../bin/rawdroid.sh com.kugou.android 3 OpenPort
 
-// Draw plot files for the generated BDG graphs
+// Draw plot files of the generated BDG graphs
 BackDroid/test$ ../bin/dotTOpdf.sh .
 ```
+You also can automatically run BackDroid for experiments using `grepCrypto.py` or `grepPort.py`.
