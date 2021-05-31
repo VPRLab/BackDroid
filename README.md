@@ -120,7 +120,7 @@ BackDroid/test$ python ../grepApk/grepPort_only.py -a . -w No   // For APKs with
 
 // Run the main BackDroid code in the release mode ("3")
 BackDroid/test$ ../bin/rawdroid.sh com.adobe.fas 3 CRYPTO
-BackDroid/test$ ../bin/rawdroid.sh com.kugou.android 3 OpenPort
+BackDroid/test$ ../bin/rawdroid.sh com.kugou.android-6362 3 OpenPort
 
 // Draw plot files of the generated BDG graphs
 BackDroid/test$ ../bin/dotTOpdf.sh .
